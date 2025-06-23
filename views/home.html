@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Thêm favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>Scada hệ thống trộn nguyên liệu</title>
+    <!-- Gọi file css slidebar -->
+    <link rel="stylesheet" href="css/slidebar.css">
+    <!-- Gọi file css home.css -->
+    <link rel="stylesheet" href="css/home.css">
+
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="logo">
+            <img src="images/Logo.png" alt="Logo">
+            <span>Scada hệ thống trộn nguyên liệu</span>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search for...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="right-container">
+            <span class="icon">Documentation</span>
+            <i class="icon fas fa-bell"></i>
+            <i class="icon fas fa-envelope"></i>
+            <div class="avatar" onclick="toggleDropdown()">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="dropdown-menu" id="user_dropdownMenu">
+                <div class="menu-header">
+                    <i class="fas fa-user-circle" style="font-size: 40px; margin-right: 10px; color: #666;"></i>
+                    <div class="user-info">
+                        <span>Ngọc Automation</span>
+                        <span class="email">Quản trị viên</span>
+                    </div>
+                </div>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-cog"></i> Account
+                </a>
+                <a href="/logout" class="menu-item">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Xổ người dùng khi click vào user -->
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('user_dropdownMenu');
+            dropdown.classList.toggle('active');
+        }
+
+        // Đóng menu khi click ra ngoài
+        window.addEventListener('click', function (e) {
+            const dropdown = document.getElementById('user_dropdownMenu');
+            const avatar = document.querySelector('.avatar');
+            if (!dropdown.contains(e.target) && !avatar.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+        
+    </script>
+
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a href="/home" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <div class="section-title">Vận hành hệ thống</div>
+        <a href="/home"><i class="fas fa-cogs"></i> Chế độ tự động</a>
+        <a href="/manu"><i class="fas fa-hand-paper"></i> Chế độ bằng tay</a>
+        <div class="section-title">Cài đặt</div>
+        <a href="#pages"><i class="fas fa-wrench"></i> Cài đặt</a>
+        <div class="section-title">Dữ liệu</div>
+        <a href="#charts"><i class="fas fa-chart-area"></i> Charts</a>
+        <a href="#tables"><i class="fas fa-table"></i> Tables</a>
+    </div>
+
+
+
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <script defer src="js/home.js"></script>
+        <!-- Hình nền cho dự án -->
+        <img id = "img_background" src="\images\symbols\back_auto.png">
+
+
+        <!-- Symbol factory -->
+        <img id = "sym_valve1" src="\images\symbols\Valve_0.svg">
+        <img id = "sym_valve2" src="\images\symbols\Valve_0.svg">
+        <img id = "sym_valve3" src="\images\symbols\Valve_0.svg">
+
+        <img id = "sym_motor_tron" src="\images\symbols\Motor_0.svg">
+        <img id = "sym_sensor" src="\images\symbols\Sensor_0.svg">
+
+        <img id = "sym_lamp_auto" src="\images\symbols\Lamp_Auto_0.png">
+        <img id = "sym_lamp_manu" src="\images\symbols\Lamp_Manu_0.png">
+
+         <!-- Hiển thị các io filed -->
+         <input id="iofield_Act_Weight_1" type="number" step="0.01" value="0.00" disabled><br><br>
+         <input id="iofield_Act_Weight_2" type="number" step="0.01" value="0.00" disabled><br><br>
+         <input id="iofield_Act_Time_Tron" type="number" value="0" disabled><br><br>
+
+         <!-- Các io filed đọc ghi dữ liệu - cài đặt thông số -->
+        <form id="tags_write">
+   
+            <label>Weight Liệu 1:</label>
+            <input id="iofield_Setting_Weight_1" type="number" step="0.01" value="0.00" disabled><br><br>
+
+            <label>Weight Liệu 2:</label>
+            <input id="iofield_Setting_Weight_2" type="number" step="0.01" value="0.00" disabled><br><br>
+
+            <label>Thời gian trộn:</label>
+            <input id="iofield_Setting_Time_Tron" type="number" value="0" disabled><br><br>
+
+    
+            <button id="edit_button" class="button">Sửa</button>
+            <button id="save_button" class="button" disabled>Lưu</button>
+
+        </form>
+
+
+        <!-- Nút nhấn điều khiển -->
+        <button class = "button" id = "btt_Auto" type="button">Tự động</button> 
+        <button class = "button" id = "btt_Manu" type="button">Bằng tay</button> 
+        <button class = "button" id = "btt_Auto_Confirm" type="button">Xác nhận vận hành</button> 
+
+        
+
+    </div>
+
+    
+</body>
+</html>

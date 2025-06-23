@@ -1,0 +1,226 @@
+/* Main content */
+.main-content {
+    margin-left: 250px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+
+/* Symbol cho van 1 */
+#sym_valve1 {
+    position: absolute; 
+    top: 256px;
+    left: 646px;
+    width: 70px;
+}
+
+/* Symbol cho van 2 */
+#sym_valve2 {
+    position: absolute; 
+    top: 256px;
+    left: 978px;
+    width: 70px;
+}
+
+/* Symbol cho van 3 */
+#sym_valve3 {
+    position: absolute; 
+    top: 650px;
+    left: 978px;
+    width: 70px;
+}
+
+/* Symbol cho động cơ trộn */
+#sym_motor_tron {
+    position: absolute; 
+    top: 342px;
+    left: 808px;
+    width: 70px;
+}
+
+/* Symbol cho cảm biến cạn */
+#sym_sensor {
+    position: absolute; 
+    top: 583px;
+    left: 679px;
+    width: 90px;
+}
+
+/* Symbol cho đèn auto */
+#sym_lamp_auto {
+    position: absolute; 
+    top: 122px;
+    left: 300px;
+    width: 55px;
+}
+
+/* Symbol cho đèn manu */
+#sym_lamp_manu {
+    position: absolute; 
+    top: 122px;
+    left: 400px;
+    width: 55px;
+}
+
+
+/* IOField - hiển thị giá trị trọng lượng nguyên liệu 1 */
+#iofield_Act_Weight_1 {
+    position: absolute; 
+    top: 140px;
+    left: 666px;
+    width: 60px;
+}
+
+/* IOField - hiển thị giá trị trọng lượng nguyên liệu 2 */
+#iofield_Act_Weight_2 {
+    position: absolute; 
+    top: 140px;
+    left: 1148px;
+    width: 60px;
+}
+
+/* IOField - hiển thị giá trị thời gian trộn */
+#iofield_Act_Time_Tron {
+    position: absolute; 
+    top: 488px;
+    left: 1000px;
+    width: 60px;
+}
+
+
+/* IOField - cài đặt thông số */
+#tags_write {
+    position: absolute; 
+    top: 441px;
+    left: 281px;
+}
+
+/* IOField - cài đặt thông số - nguyên liệu 1 */
+#iofield_Setting_Weight_1 {
+    position: absolute; 
+    width: 70px;
+}
+
+/* IOField - cài đặt thông số - nguyên liệu 2 */
+#iofield_Setting_Weight_2 {
+    position: absolute; 
+    width: 70px;
+}
+
+/* IOField - cài đặt thông số - thời gian trộn */
+#iofield_Setting_Time_Tron {
+    position: absolute; 
+    width: 70px;
+}
+
+
+/***** TRƯỜNG GHI DỮ LIỆU DẠNG IO FILED *****/
+
+
+/***** NÚT NHẤN ĐIỀU KHIỂN *****/
+/* Nút nhấn điều khiển - Form */
+#buttons_control {
+    position: absolute; 
+    left: 600px;
+    top: 100px;
+}
+
+/* Nút nhấn điều khiển - Nút nhấn */
+.button {
+    padding: 2px 2px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 50px;
+    width: 100px;
+}
+.button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Thu nhỏ riêng nút "Sửa" */
+#edit_button {
+    background-color: #3498db; /* Màu xanh biển */
+    color: white;
+    height: 40px; /* Giảm chiều cao */
+    width: 80px;  /* Giảm chiều rộng */
+    font-size: 14px; /* Giảm kích thước chữ */
+    padding: 8px 16px; /* Giảm padding */
+    border-radius: 8px; /* Giảm bo tròn */
+}
+
+#edit_button:hover {
+    background-color: #2980b9; /* Xanh đậm khi hover */
+}
+
+/* Thu nhỏ riêng nút "Lưu" */
+#save_button {
+    background-color: #2ecc71; /* Màu xanh lá */
+    color: white;
+    height: 40px;
+    width: 80px;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+#save_button:hover {
+    background-color: #27ae60; /* Xanh lá đậm khi hover */
+}
+
+/* Khi nút bị disable */
+#save_button:disabled, #edit_button:disabled {
+    background-color: #bdc3c7;
+    color: #7f8c8d;
+    cursor: not-allowed;
+}
+
+
+
+/***** NÚT NHẤN ĐIỀU KHIỂN *****/
+
+/* Nút nhấn điều khiển - Chế độ auto */
+#btt_Auto {
+    background: linear-gradient(45deg, #4caf50, #81c784);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    position: absolute; 
+    top: 256px;
+    left: 280px;
+    width: 100px;
+    height: 45px;
+}
+
+/* Nút nhấn điều khiển - Chế độ bằng tay */
+#btt_Manu {
+    background: linear-gradient(45deg, #9c9a26, #b6e609);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    position: absolute; 
+    top: 256px;
+    left: 390px;
+    width: 100px;
+    height: 45px;
+}
+
+/* Nút nhấn điều khiển - Xác nhận vận hành */
+#btt_Auto_Confirm {
+    background: linear-gradient(45deg, #4caf50, #81c784);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    position: absolute; 
+    top: 312px;
+    left: 280px;
+    width: 210px;
+    height: 45px;
+}
+
